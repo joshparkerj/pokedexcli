@@ -1,7 +1,17 @@
 package main
 
+import (
+	"errors"
+)
+
 func eval(input string) (output string, err error) {
 	// The "E" in "REPL"
-	output, err = commands()[input].callback()
+	command, ok := commands()[input]
+	if !ok {
+		err = errors.New("command not found")
+	} else {
+		output, err = command.callback()
+	}
+
 	return
 }

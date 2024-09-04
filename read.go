@@ -10,7 +10,7 @@ var scanner = bufio.NewScanner(os.Stdin)
 
 func read() {
 	// the "R" in "REPL"
-	fmt.Print("pokedex > ")
+	fmt.Print("Pokedex > ")
 	scanner.Scan()
 	print(scanner.Text())
 }

@@ -1,8 +1,8 @@
 package main
 
 import (
+	"fmt"
 	"github.com/joshparkerj/pokedexcli/internal/pokeapi"
-	"strings"
 )
 
 func commandExplore(location string) (result string, err error) {
@@ -11,6 +11,11 @@ func commandExplore(location string) (result string, err error) {
 		return
 	}
 
-	result = strings.Join(results, "\n")
+	result = fmt.Sprintf("Exploring %v...\nFound Pokemon:", location)
+
+	for _, r := range results {
+		result += fmt.Sprintf("\n - %v", r)
+	}
+
 	return
 }

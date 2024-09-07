@@ -1,15 +1,11 @@
 package pokeapi
 
-type ConditionValue struct {
-	// TODO: what does the condition value look like?
-}
-
 type EncounterDetail struct {
-	Chance          int              `json:"chance"`
-	MaxLevel        int              `json:"max_level"`
-	MinLevel        int              `json:"min_level"`
-	Method          Result           `json:"method"`
-	ConditionValues []ConditionValue `json:"condition_values"`
+	Chance          int        `json:"chance"`
+	MaxLevel        int        `json:"max_level"`
+	MinLevel        int        `json:"min_level"`
+	Method          Result     `json:"method"`
+	ConditionValues []struct{} `json:"condition_values"`
 }
 
 type PokemonEncounterVersionDetail struct {

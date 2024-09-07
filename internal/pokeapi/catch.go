@@ -4,8 +4,8 @@ import (
 	"math/rand"
 )
 
-func Catch(pokemonName string) (result bool, err error) {
-	pokemon, err := getPokemon(pokemonName)
+func Catch(pokemonName string) (result bool, pokemon Pokemon, err error) {
+	pokemon, err = getPokemon(pokemonName)
 	if err != nil {
 		return
 	}

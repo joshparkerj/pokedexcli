@@ -5,8 +5,8 @@ import (
 	"strings"
 )
 
-func commandMap(_ string) (result string, err error) {
-	results, err := pokeapi.Locations()
+func commandExplore(location string) (result string, err error) {
+	results, err := pokeapi.Explorer(location)
 	if err != nil {
 		return
 	}

@@ -5,8 +5,8 @@ import (
 	"fmt"
 )
 
-func getLocationArea(pageNumber int) (result LocationArea, err error) {
-	path := fmt.Sprintf("location-area?offset=%v&limit=20", (pageNumber-1)*20)
+func getLocationPokemon(locationName string) (result LocationPokemon, err error) {
+	path := fmt.Sprintf("location-area/%v/", locationName)
 	body, err := get(path)
 	if err != nil {
 		return

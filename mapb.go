@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func commandMapb() (result string, err error) {
+func commandMapb(_ string) (result string, err error) {
 	results, err := pokeapi.LocationsBack()
 	if err != nil {
 		return

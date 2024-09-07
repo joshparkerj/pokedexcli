@@ -38,5 +38,10 @@ func commands() map[string]cliCommand {
 			description: "takes the name of a Pokemon as an argument. Catching Pokemon adds them to the Pokedex.",
 			callback:    commandCatch,
 		},
+		"inspect": {
+			name:        "inspect",
+			description: "view data for a pokemon in your collection",
+			callback:    commandInspect,
+		},
 	}
 }

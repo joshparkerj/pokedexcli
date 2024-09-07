@@ -25,10 +25,10 @@ func (p *pokedex) Add(pokemon pokeapi.Pokemon) {
 	p.dex[pokemon.Name] = pokemon
 }
 
-func (p *pokedex) Get(pokemonName string) (pokemon pokeapi.Pokemon) {
+func (p *pokedex) Get(pokemonName string) (pokemon pokeapi.Pokemon, ok bool) {
 	p.mu.Lock()
 	defer p.mu.Unlock()
-	pokemon = p.dex[pokemonName]
+	pokemon, ok = p.dex[pokemonName]
 	return
 }
 

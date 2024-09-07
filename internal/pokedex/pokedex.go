@@ -32,4 +32,14 @@ func (p *pokedex) Get(pokemonName string) (pokemon pokeapi.Pokemon, ok bool) {
 	return
 }
 
+func (p *pokedex) List() (pokemonNames []string) {
+	p.mu.Lock()
+	defer p.mu.Unlock()
+	for name, _ := range p.dex {
+		pokemonNames = append(pokemonNames, name)
+	}
+
+	return
+}
+
 var Pokedex = startPokedex()
